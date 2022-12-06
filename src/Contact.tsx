@@ -36,8 +36,6 @@ function Contact() {
           <textarea
             className="relative block w-full h-12 pl-3 text-gray-800 bg-white border appearance-none focus:z-10 focus-outline-none"
             placeholder="Message"
-            type="message"
-            length="10"
           />
           <Button>SEND MESSAGE</Button>
         </div>

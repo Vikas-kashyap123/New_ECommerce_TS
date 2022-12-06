@@ -15,6 +15,7 @@ import CartProvider from "./providers/CartProvider";
 import Contact from "./Contact";
 import Home from "./Home";
 import DetailsWithClass from "./DetailsWithClass";
+import Details from "./Details";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
             <div className="grow">
               <Routes>
                 <Route index element={<ProductPage />} />
-                <Route path="/Products/:id" element={<DetailsWithClass />} />
+                <Route path="/Products/:id" element={<Details />} />
                 <Route path="*" element={<NotFound />} />
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/login" element={<LoginPage />} />

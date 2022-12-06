@@ -30,20 +30,23 @@ const CartProvider: FC<CartProvicerProps> = ({ isLoggedIn, children }) => {
   //   return <Loading />;
   // }
 
-  function quantityMapToCart(quantityMap) {
+  function quantityMapToCart(quantityMap: any) {
+    console.log("quantityMap", quantityMap);
     getProductsByIds(Object.keys(quantityMap)).then(function (products) {
-      const savedCart = products.map((p) => ({
+      const savedCart = products.map((p: any) => ({
         product: p,
         quantity: quantityMap[p.id],
       }));
-
       setCart(savedCart);
     });
   }
 
-  function addToCart(productId, count) {
+  function addToCart(productId: number, count: number) {
     const quantityMap = cart.reduce(
-      (m, cartItem) => ({ ...m, [cartItem.product.id]: cartItem.quantity }),
+      (m, cartItem: any) => ({
+        ...m,
+        [cartItem.product.id]: cartItem.quantity,
+      }),
       {}
     );
 
@@ -53,7 +56,7 @@ const CartProvider: FC<CartProvicerProps> = ({ isLoggedIn, children }) => {
     updateCart(newCart);
   }
 
-  function updateCart(quantityMap) {
+  function updateCart(quantityMap: any) {
     if (isLoggedIn) {
       saveCart(quantityMap).then(function (response) {
         //   setCart(response);
@@ -66,7 +69,7 @@ const CartProvider: FC<CartProvicerProps> = ({ isLoggedIn, children }) => {
     }
   }
 
-  const cartCount = cart.reduce(function (previous, current) {
+  const cartCount = cart.reduce(function (previous, current: any) {
     return previous + current.quantity;
   }, 0);
 
@@ -78,4 +81,3 @@ const CartProvider: FC<CartProvicerProps> = ({ isLoggedIn, children }) => {
 };
 
 export default withUser(CartProvider);
-// getCart().then(function (savedCart)

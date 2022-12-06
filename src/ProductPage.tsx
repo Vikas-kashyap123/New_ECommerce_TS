@@ -2,11 +2,10 @@ import { useState, useEffect, FC, ChangeEvent } from "react";
 import ProductList from "./ProductList";
 import { getProductList } from "./Api";
 import NoMatching from "./NoMatching";
-import Button from "./Button/Button";
 import { withAlert, withUser } from "./withProvider";
 import Loading from "./loading/Loading";
 import { range } from "lodash";
-import { Link, Navigate, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { HiArrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 
 type ProductPageProps = {
@@ -57,7 +56,7 @@ const ProductPage: FC<ProductPageProps> = ({
   useEffect(
     function () {
       let sortType;
-      let sortBy;
+      let sortBy: any;
 
       if (sort == "title") {
         sortBy = "title";

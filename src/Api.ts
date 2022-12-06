@@ -1,4 +1,5 @@
 import axios from "axios";
+import { FC } from "react";
 
 export function getProductData(id: number) {
   return axios
@@ -21,8 +22,18 @@ export function getProductsByIds(ids: number[]) {
     });
 }
 
-export function getProductList(sortBy, search, page, sortType) {
-  let params = {};
+export const getProductList = (
+  sortBy: string,
+  search: string,
+  page: number,
+  sortType: string
+) => {
+  let params: {
+    sortBy?: string;
+    search?: string;
+    page?: number;
+    sortType?: string;
+  } = {};
 
   if (sortBy) {
     params.sortBy = sortBy;
@@ -47,9 +58,10 @@ export function getProductList(sortBy, search, page, sortType) {
     .then(function (response) {
       return response.data;
     });
-}
+};
 
-export function saveCart(cart) {
+export function saveCart(cart: {}) {
+  console.log("cart", cart);
   return axios
     .post(
       "https://myeasykart.codeyogi.io/carts",

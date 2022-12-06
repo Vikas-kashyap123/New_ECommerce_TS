@@ -90,23 +90,6 @@ const Navbar: FC<NavbarProps> = ({ cartCount, setUser, isLoggedIn }) => {
               Login
             </a>
           )}
-          {/* <div className="hidden space-x-4 text-xl md:block ">
-            <Link className="hover:text-primary-dark" to="/">
-              Home
-            </Link>
-            <Link to="/" className="hover:text-primary-dark">
-              Products
-            </Link>
-            <Link to="/" className="hover:text-primary-dark">
-              About
-            </Link>
-            <Link to="/" className="hover:text-primary-dark">
-              Contact
-            </Link>
-            <Link className="hover:text-primary-dark" to="/login">
-              Account
-            </Link>
-          </div> */}
 
           <div className="flex gap-4">
             <div>

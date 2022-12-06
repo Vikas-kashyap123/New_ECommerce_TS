@@ -19,5 +19,5 @@ const Template: ComponentStory<typeof AlertCard> = (args: any) => (
 
 export const success = Template.bind({});
 success.args = {
-  themeMap: "success",
+  alert: "success",
 };

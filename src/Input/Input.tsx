@@ -1,12 +1,12 @@
-import { ChangeEvent, ChangeEventHandler, FC, ReactNode } from "react";
+import { ChangeEvent, FC, ReactNode } from "react";
 
 type InputProps = {
-  name: string;
-  label: string;
-  id: string;
-  touched: { email: boolean; password: boolean };
+  name?: string;
+  label?: string;
+  id?: string;
+  touched?: { email: boolean; password: boolean };
   handleSubmit?: HTMLFormElement;
-  values: string;
+  values?: string;
   errors?: ReactNode;
   onChange?: ChangeEvent<Element>;
   handleBlur?: { email: string; password: string };

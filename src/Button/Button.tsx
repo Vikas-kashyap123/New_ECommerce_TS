@@ -1,4 +1,3 @@
-import { size } from "lodash";
 import { FC, ReactNode, ButtonHTMLAttributes } from "react";
 
 type ButtonProps = {
